@@ -1,0 +1,36 @@
+.container{
+    padding:var(--layout-padding);
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.imgContainer{
+    flex:1;
+    position: relative;
+    width: 500px;
+    height: 250px;
+}
+.img{
+    object-fit: cover;
+}
+.formContainer{
+    flex:1;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form input,.form textarea{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: lightgray;
+}
+.form button{
+    padding: 10px;
+    border: none;
+    color: var(--primary-text-color);
+    background-color: var(--global-backgound-color);
+    cursor: pointer;
+}
