@@ -1,0 +1,8 @@
+.link{
+    padding: var(--p5);
+    border-radius: var(--br);
+}
+.active{
+    background: var(--primary-text-color);
+    color: var(--background);
+}
