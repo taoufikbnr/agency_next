@@ -1,8 +1,11 @@
 .container{
     height: 100px;
+    padding: 0 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #1C3D77;
+
 }
 .logo{
    font-size: 30px;
