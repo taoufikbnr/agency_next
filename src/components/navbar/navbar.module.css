@@ -1,10 +1,10 @@
 .container{
     height: 100px;
-    padding: 0 50px;
+    padding: var(--layout-padding);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1C3D77;
+    background-color: var(--global-backgound-color);
 
 }
 .logo{

@@ -1,6 +1,8 @@
 :root {
   --background : black;
   --primary-text-color : white;
+  --global-backgound-color:#1C3D77;
+  --layout-padding: 0 50px;
   --p5:5px;
   --br:10px;
   --max-width: 1100px;
