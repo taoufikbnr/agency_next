@@ -1,5 +1,39 @@
+.container{
+    display: flex;
+    gap: 100px;
+    padding: var(--layout-padding);
+}
+.textContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .imgContainer{
+    flex:1;
     position: relative;
     width: 500px;
     height: 250px;
 }
+.title{
+    font-size: 54px;
+}
+.desc{
+    font-size: 20px;
+    font-weight: 300;
+}
+.stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stat h1{
+    color: yellowgreen;
+}
+.stat p{
+    font-size: 12px;
+}
+.img{
+    object-fit: cover;
+}
+
