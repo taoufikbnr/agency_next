@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from "./blog.module.css"
 
 const BlogLayout = ({children}) => {
   return (
-    <div>
+    <div className={styles.layout}>
         <h2>This the Blog Layout</h2>
         {children}
     </div>

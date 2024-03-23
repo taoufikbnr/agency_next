@@ -1,6 +1,7 @@
-.container{
-    padding:var(--layout-padding);
+.layout{
+    padding: var(--layout-padding);
 }
+
 .cards{
     display: flex;
     justify-content: space-between;
