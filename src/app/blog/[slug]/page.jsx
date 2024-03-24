@@ -1,14 +1,36 @@
 import Image from 'next/image'
 import styles from './pageSingle.module.css'
+import { getPost } from '@/app/lib/data';
+import dayjs from 'dayjs';
 
-const SinglePostPage = () => {
+const fetchPost = async (slug) => {
+  try {
+    const response = await fetch(`http://localhost:3000/api/blog/${slug}`);
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+  }
+
+    return response.json();
+  } catch (error) {
+    
+  }
+}
+
+const SinglePostPage = async ({params}) => {
+  const {slug} = params;
+  //fetch with API
+  const post = await fetchPost(slug);
+
+  //fetch Without API
+  // const post = await getPost(slug);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image src={"/slide-1.jpg"} alt="single" fill/>
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>Title</h1>
+        <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detail}>
           <div className={styles.avatar}>
             <Image src={"/slide-1.jpg"} alt="single" fill/>
@@ -19,11 +41,11 @@ const SinglePostPage = () => {
           </div>
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
-            <span className={styles.detailValue}>01.01.2023</span>
+            <span className={styles.detailValue}>{dayjs(post.createdAt).format("YY.MM.DD")}</span>
           </div>
         </div>
         <div className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique possimus corrupti, sapiente aperiam cum mollitia sint cumque reprehenderit at iusto ipsa optio obcaecati dolore autem nesciunt fugiat maiores recusandae hic.
+            {post.desc}
         </div>
       </div>
     </div>
