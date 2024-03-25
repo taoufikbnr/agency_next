@@ -1,6 +1,6 @@
 import { connectToDb } from "./connectDB";
 import { Post, User } from "./models";
-
+import bcrypt from "bcrypt";
 export const createPost = async (formData) =>{
     "use server";
     const {title,desc,slug,userId} = Object.fromEntries(formData);
@@ -24,11 +24,15 @@ export const register = async (formData) =>{
     if(password!==retypePassword){
         return "Passwords do not match"
     }
-    const userExist = await User.findOne({email});
-    if(userExist) return "Email already exists";
+ 
     try {
         connectToDb();
-        const user =new User({username,email,password});
+        const userExist = await User.findOne({email});
+        if(userExist) return "Email already exists";
+    
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword =await bcrypt.hash(password,salt)
+        const user =new User({username,email,password:hashedPassword});
 
       await user.save();
     } catch (error) {
