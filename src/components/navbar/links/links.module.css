@@ -18,6 +18,8 @@
 }
 .burgerButton,.mobileLinks{
     display: none;
+    background-color: var(  --global-backgound-color);
+
 }
 @media (max-width:768px) {
     .links{
@@ -28,7 +30,6 @@
         top: 100px;
         right: 0;
         width: 50%;
-        height: calc(100vh - 100px);
         display: flex;
         flex-direction: column;
         align-items: center;

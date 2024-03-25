@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 const NavLink = ({link}) => {
     const path = usePathname();
   return (
-    <div>
+    <div className={styles.container}>
       <Link href={link.path} className={`${styles.link} ${path === link.path && styles.active} `}>
             {link.title}
      </Link>

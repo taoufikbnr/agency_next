@@ -1,3 +1,6 @@
+.container{
+    padding: 5px;
+}
 .link{
     padding: var(--p5);
     border-radius: var(--br);
