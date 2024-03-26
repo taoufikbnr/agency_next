@@ -1,8 +1,14 @@
-import React from 'react'
+import { login } from '@/app/lib/actions'
+import LoginForm from '@/components/loginForm/loginForm'
+import styles from './login.module.css'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <LoginForm login={login} />
+      </div>
+    </div>
   )
 }
 
